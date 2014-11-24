@@ -26,7 +26,10 @@ def showName(httpRequest,name):
     except ValueError:
         raise Http404()
     #return render_to_response('template1.tpl.html',locals())
-    return render_to_response('template1.tpl.html',{'name':'abc'})
+    return render_to_response('test/template1.tpl.html',{'name':'abc'})
+
+def showRequest(httpRequest):
+    return render_to_response('template2.html',{'items':httpRequest.META.items()})
 
 
 
